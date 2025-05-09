@@ -1,0 +1,195 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0a0a0a, #1e1e1e);
+  color: #f1f1f1;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#join-form input[type="text"],
+#join-form button {
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding and borders are included in the width */
+}
+
+#join-form input[type="text"] {
+  padding: 14px;
+  font-size: 1rem;
+  background: #2b2b2b;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #fff;
+  margin-bottom: 20px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+#join-form input[type="text"]:focus {
+  border-color: #0a84ff;
+}
+
+#join-form button {
+  padding: 14px;
+  font-size: 1rem;
+  background: #0a84ff;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+#join-form button:hover {
+  background: #006edc;
+  transform: scale(1.02);
+}
+
+#join-form button:active {
+  transform: scale(0.98);
+}
+
+/* Add styling for the links */
+.links-container {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.links-container a {
+  color: #0a84ff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+links-container a:hover {
+  color: #006edc;
+}
+
+/* Add subtle animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-container {
+  width: 100%;
+  max-width: 700px; /* Increased max-width for a larger chat area */
+  height: 85vh; /* Increased height for a larger chat area */
+  display: flex;
+  flex-direction: column;
+  background: #1e1e1e;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+.messages-container {
+  flex: 1;
+  padding: 20px;
+  background: #2b2b2b;
+  overflow-y: auto; /* Only vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  color: #f1f1f1;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  line-height: 1.8; /* Increased line height for better readability */
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+}
+
+.message {
+  margin-bottom: 15px; /* Add spacing between messages */
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Ensure the message content wraps */
+  word-break: break-word; /* Break long words to wrap to the next line */
+}
+
+.sender {
+  font-weight: bold;
+  color: #0a84ff; /* Highlight sender's name */
+  margin-right: 10px;
+  font-size: 1.1rem; /* Slightly larger font for sender */
+}
+
+.message-text {
+  color: #f1f1f1; /* Ensure message text is readable */
+  font-size: 1rem;
+  background: #1e1e1e; /* Add a subtle background for the message */
+  padding: 8px 12px;
+  border-radius: 8px; /* Rounded corners for a modern look */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  word-wrap: break-word; /* Break long words to wrap to the next line */
+  overflow-wrap: break-word; /* Ensure long words wrap properly */
+  max-width: 100%; /* Prevent the message from exceeding the container width */
+  white-space: pre-wrap; /* Preserve whitespace and wrap text */
+}
+
+.messages-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+messages-container::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+.chat-form {
+  display: flex;
+  padding: 10px;
+  background: #1e1e1e;
+  border-top: 1px solid #444;
+}
+
+#message-input {
+  flex: 1;
+  padding: 14px;
+  font-size: 1rem;
+  background: #2b2b2b;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+#message-input:focus {
+  border-color: #0a84ff;
+}
+
+#chat-form button {
+  padding: 14px 20px;
+  font-size: 1rem;
+  background: #0a84ff;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+#chat-form button:hover {
+  background: #006edc;
+  transform: scale(1.02);
+}
+
+#chat-form button:active {
+  transform: scale(0.98);
+}
