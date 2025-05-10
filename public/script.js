@@ -86,11 +86,18 @@ function addMessage(sender, text) {
 }
 
 // Listen for incoming messages
-socket.on('chat message', function(data) {
+socket.on('chat message', function (data) {
   // Only add the message if it's not from the current user
   if (data.username !== username) {
     addMessage(data.username, data.message);
   }
+});
+
+// Listen for message history from the server
+socket.on('message history', (history) => {
+  history.forEach((message) => {
+    addMessage(message.username, message.message);
+  });
 });
 
 // Listen for error messages from the server

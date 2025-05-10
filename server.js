@@ -22,15 +22,50 @@ function containsBannedWords(text) {
   });
 }
 
+// Message history (in-memory storage)
+const messageHistory = [];
+
+// Function to clean up old messages
+function cleanUpOldMessages() {
+  const tenMinutesAgo = Date.now() - 10 * 60 * 1000; // 10 minutes in milliseconds
+  while (messageHistory.length > 0 && messageHistory[0].timestamp < tenMinutesAgo) {
+    messageHistory.shift(); // Remove the oldest message
+  }
+}
+
+// Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 
 io.on('connection', (socket) => {
+  // Send message history to the new user
+  socket.emit('message history', messageHistory);
+
+  // Handle incoming chat messages
   socket.on('chat message', (data) => {
     if (containsBannedWords(data.username)) {
       socket.emit('error message', 'Your username contains inappropriate words.');
       return;
     }
-    io.emit('chat message', data);
+
+    if (containsBannedWords(data.message)) {
+      socket.emit('error message', 'Your message contains inappropriate words.');
+      return;
+    }
+
+    const message = {
+      username: data.username,
+      message: data.message,
+      timestamp: Date.now(),
+    };
+
+    // Add the message to the history
+    messageHistory.push(message);
+
+    // Clean up old messages
+    cleanUpOldMessages();
+
+    // Broadcast the message to all users
+    io.emit('chat message', message);
   });
 });
 
