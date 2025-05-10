@@ -14,12 +14,31 @@ try {
   console.error('Failed to load badwords.json:', err);
 }
 
-// Function to check for banned words
-function containsBannedWords(text) {
-  return bannedWords.some((entry) => {
-    const regex = new RegExp(entry.match, 'i'); // Case-insensitive regex
-    return regex.test(text);
-  });
+// Function to check if a username is clean
+function isUsernameClean(username) {
+  const lowerUsername = username.toLowerCase();
+
+  for (const entry of bannedWords) {
+    const match = entry.match.toLowerCase();
+
+    if (lowerUsername.includes(match)) {
+      // Check exceptions
+      if (entry.exceptions) {
+        for (const ex of entry.exceptions) {
+          const pattern = ex.replace(/\*/g, '.*'); // Convert wildcard to regex
+          const regex = new RegExp(`^.*${pattern}.*$`, 'i'); // Case insensitive
+
+          if (regex.test(lowerUsername)) {
+            return true; // Exception matched, allow
+          }
+        }
+      }
+
+      return false; // No exception matched, word is bad
+    }
+  }
+
+  return true; // No bad word found
 }
 
 // Message history (in-memory storage)
@@ -42,12 +61,12 @@ io.on('connection', (socket) => {
 
   // Handle incoming chat messages
   socket.on('chat message', (data) => {
-    if (containsBannedWords(data.username)) {
+    if (!isUsernameClean(data.username)) {
       socket.emit('error message', 'Your username contains inappropriate words.');
       return;
     }
 
-    if (containsBannedWords(data.message)) {
+    if (!isUsernameClean(data.message)) {
       socket.emit('error message', 'Your message contains inappropriate words.');
       return;
     }

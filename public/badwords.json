@@ -1960,6 +1960,7 @@
     "severity": 1,
     "exceptions": [
       "*cat",
+      "*hello",
       "*er",
       "*fire",
       "*kite",

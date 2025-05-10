@@ -19,11 +19,29 @@ fetch('badwords.json')
     console.error('Failed to load badwords.json:', err);
   });
 
+// Function to escape special characters in regex
+function escapeRegex(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // Escape special characters
+}
+
 // Function to check for banned words
 function containsBannedWords(text) {
   return bannedWords.some((entry) => {
     const regex = new RegExp(entry.match, 'i'); // Case-insensitive regex
-    return regex.test(text);
+    if (regex.test(text)) {
+      // Check for exceptions
+      if (
+        entry.exceptions &&
+        entry.exceptions.some((exception) => {
+          const exceptionRegex = new RegExp(`\\b${escapeRegex(exception)}\\b`, 'i'); // Match exceptions as whole words
+          return exceptionRegex.test(text);
+        })
+      ) {
+        return false; // Skip if the text matches an exception
+      }
+      return true; // Flag as inappropriate
+    }
+    return false;
   });
 }
 
