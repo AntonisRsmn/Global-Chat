@@ -25,9 +25,10 @@
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
 
-  // Run the function on load and resize
+  // Run the function on load, resize, and orientation change
   window.addEventListener('load', adjustViewportHeight);
   window.addEventListener('resize', adjustViewportHeight);
+  window.addEventListener('orientationchange', adjustViewportHeight);
 </script>
 </body>
 </html>
