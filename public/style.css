@@ -163,6 +163,7 @@ messages-container::-webkit-scrollbar-thumb:hover {
   border-top: 1px solid #444;
   position: sticky; /* Stick the input area to the bottom of the container */
   bottom: 0;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom)); /* Add safe area padding */
 }
 
 #message-input {
