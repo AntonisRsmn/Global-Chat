@@ -203,13 +203,16 @@ messages-container::-webkit-scrollbar-thumb:hover {
 @media (max-width: 768px) {
   .chat-container {
     width: 100%; /* Full width for mobile */
-    height: 85vh; /* Reduce height to fit Safari's viewport */
+    height: 90vh; /* Increase height for mobile */
     border-radius: 0; /* Remove border radius for a seamless fit */
+    overflow: hidden; /* Prevent scrolling */
   }
 
   .messages-container {
+    flex: 1; /* Allow the messages container to take up all available space */
     padding: 8px; /* Reduce padding for smaller screens */
     font-size: 0.9rem; /* Slightly smaller font size */
+    overflow: hidden; /* Remove scrolling */
   }
 
   .message {
