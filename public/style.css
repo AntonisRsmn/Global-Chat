@@ -85,14 +85,15 @@ links-container a:hover {
 
 .chat-container {
   width: 100%;
-  max-width: 700px; /* Default max-width for larger screens */
-  height: calc(var(--vh, 1vh) * 100); /* Use the dynamically calculated height */
+  max-width: 700px;
+  height: calc(var(--vh, 1vh) * 100); /* Use dynamically calculated height */
   display: flex;
   flex-direction: column;
   background: #1e1e1e;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
   overflow: hidden;
+  position: relative; /* Ensure proper stacking context */
 }
 
 .messages-container {
@@ -160,6 +161,8 @@ messages-container::-webkit-scrollbar-thumb:hover {
   padding: 10px;
   background: #1e1e1e;
   border-top: 1px solid #444;
+  position: sticky; /* Stick the input area to the bottom of the container */
+  bottom: 0;
 }
 
 #message-input {
