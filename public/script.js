@@ -1,6 +1,32 @@
 const socket = io();
 const username = localStorage.getItem('username');
 
+// Load banned words from badwords.json
+let bannedWords = [];
+fetch('badwords.json')
+  .then((response) => response.json())
+  .then((data) => {
+    bannedWords = data;
+
+    // Redirect if username contains banned words
+    if (containsBannedWords(username)) {
+      alert('Your username contains inappropriate words. Please choose a different one.');
+      localStorage.removeItem('username');
+      window.location.href = 'index.html';
+    }
+  })
+  .catch((err) => {
+    console.error('Failed to load badwords.json:', err);
+  });
+
+// Function to check for banned words
+function containsBannedWords(text) {
+  return bannedWords.some((entry) => {
+    const regex = new RegExp(entry.match, 'i'); // Case-insensitive regex
+    return regex.test(text);
+  });
+}
+
 if (!username) {
   window.location.href = 'index.html';
 }
@@ -65,4 +91,9 @@ socket.on('chat message', function(data) {
   if (data.username !== username) {
     addMessage(data.username, data.message);
   }
+});
+
+// Listen for error messages from the server
+socket.on('error message', (errorMessage) => {
+  alert(errorMessage);
 });
