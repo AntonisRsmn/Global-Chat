@@ -165,7 +165,7 @@ messages-container::-webkit-scrollbar-thumb:hover {
 #message-input {
   flex: 1;
   padding: 12px; /* Adjusted padding for smaller screens */
-  font-size: 0.9rem; /* Slightly smaller font size for mobile */
+  font-size: 16px; /* Slightly smaller font size for mobile */
   background: #2b2b2b;
   border: 1px solid #444;
   border-radius: 8px;
@@ -202,13 +202,13 @@ messages-container::-webkit-scrollbar-thumb:hover {
 /* Responsive Design for Mobile Devices */
 @media (max-width: 768px) {
   .chat-container {
-    max-width: 90%; /* Reduce width for smaller screens */
-    height: 90vh; /* Adjust height for mobile */
-    border-radius: 12px; /* Slightly smaller border radius */
+    width: 100%; /* Make the chat container take the full width */
+    height: 100vh; /* Make the chat container take the full height of the viewport */
+    border-radius: 0; /* Remove border radius for a seamless fit */
   }
 
   .messages-container {
-    padding: 8px; /* Reduce padding for smaller screens */
+    padding: 10px; /* Adjust padding for smaller screens */
     font-size: 0.9rem; /* Slightly smaller font size */
   }
 
@@ -216,23 +216,19 @@ messages-container::-webkit-scrollbar-thumb:hover {
     margin-bottom: 8px; /* Reduce spacing between messages */
   }
 
-  .sender {
-    font-size: 0.9rem; /* Adjust font size for sender */
-  }
-
   .message-text {
     font-size: 0.9rem; /* Adjust font size for message text */
-    padding: 6px 10px; /* Reduce padding for smaller screens */
+    padding: 8px 10px; /* Adjust padding for smaller screens */
   }
 
   #message-input {
-    padding: 10px; /* Adjust padding for input field */
-    font-size: 0.85rem; /* Slightly smaller font size */
+    padding: 12px; /* Adjust padding for input field */
+    font-size: 1rem; /* Ensure no zooming on mobile */
   }
 
   #chat-form button {
-    padding: 10px 14px; /* Adjust padding for button */
-    font-size: 0.85rem; /* Slightly smaller font size */
+    padding: 12px 16px; /* Adjust padding for button */
+    font-size: 1rem; /* Ensure consistent button size */
   }
 }
 
