@@ -8,17 +8,37 @@
   <link rel="icon" type="image/x-icon" href="../Imgs/Unlike-Logo-Dark.png">
 </head>
 <body>
-  <div class="join-container">
-    <h1>Unlike</h1>
-    <form id="join-form">
-      <input type="text" id="username" placeholder="Enter a username" required />
-      <button type="submit">Join</button>
+  
+    <!-- Contact Section -->
+    <div class="Contact-back">
+    <section id="contact">
+    <form class="form-contact" action="https://formspree.io/f/xnndbddn" method="POST">
+
+        <div style="margin-bottom: 30px;">
+            <h1>Contact Form</h1>
+        </div>
+
+        <div class="form-group">
+            <input type="text" name="first" placeholder="First Name" autocomplete="off" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" name="last" placeholder="Last Name" autocomplete="off" required>
+        </div>
+
+        <div class="form-group">
+            <input type="email" name="email" placeholder="Email Address" autocomplete="off" required>
+        </div>
+
+        <div class="form-group">
+            <textarea rows="5" cols="60" name="message" placeholder="Enter Text" autocomplete="off" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+
     </form>
-    <div class="links-container">
-      <a href="PrivacyPolicy.html">Privacy Policy</a>
-      <a href="ToS.html">Terms of Service</a>
-    </div>
-  </div>
 
   <footer class="footer">
         <div class="social-icons">
@@ -29,15 +49,5 @@
         <p>&copy; 2025 Antonis Rusman. All rights reserved.</p>
   </footer>
 
-  <script>
-    document.getElementById('join-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const username = document.getElementById('username').value.trim();
-      if (username) {
-        localStorage.setItem('username', username);
-        window.location.href = 'chat.html';
-      }
-    });
-  </script>
 </body>
 </html>
