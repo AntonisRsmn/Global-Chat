@@ -122,37 +122,3 @@ socket.on('message history', (history) => {
 socket.on('error message', (errorMessage) => {
   alert(errorMessage);
 });
-
-async function validateUsername(username) {
-  try {
-    const response = await fetch('/validate-username', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ username }),
-    });
-
-    const result = await response.json();
-    return result.isValid;
-  } catch (error) {
-    console.error('Error validating username:', error);
-    return false;
-  }
-}
-
-// Example usage
-document.getElementById('usernameForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const username = document.getElementById('usernameInput').value;
-
-  const isValid = await validateUsername(username);
-  if (isValid) {
-    alert('Username is valid!');
-    // Save the username and redirect to the chat page
-    localStorage.setItem('username', username);
-    window.location.href = 'chat.html';
-  } else {
-    alert('Username is invalid!');
-  }
-});
