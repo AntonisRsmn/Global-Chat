@@ -39,8 +39,8 @@ Unlike is built on a simple server–client model:
 
 ## ⚙️ Tech Stack
 
-- **Server**: Node.js with `ws` (or Go / Python / Rust WebSocket frameworks)
-- **Client**: HTML/CSS/JavaScript (or lightweight SPA framework like React/Vue/Svelte)
+- **Server**: Node.js with `ws`
+- **Client**: HTML/CSS/JavaScript
 - **Hosting**: Deployed over HTTPS and WebSockets (WSS) for encrypted communication
 - **No Database**: chat operates entirely in volatile memory
 
@@ -57,3 +57,42 @@ Unlike is built on a simple server–client model:
 1. Clone repository:  
    ```bash
    git clone https://github.com/your‑org/unlike.git
+
+2. Install dependencies:
+  cd unlike
+  npm install
+
+3. Launch server:
+
+  npm run start
+
+4
+    Open browser to http://localhost:3000 (or your configured host) and chat away!
+```
+
+Deployment
+
+    Provide an SSL-secured WebSocket endpoint (e.g. wss://chat.unlike.gr)
+
+    Deploy the server on any VPS or cloud provider
+
+    Use a reverse proxy (Nginx/Traefik) to handle HTTPS/WSS
+
+    Again: no database setup—just run and go!
+
+💡 Why “Unlike”?
+
+    The name reflects unlike conventional chat platforms
+
+    Unlike stores no data and does not require identifying information
+
+    Unlike traditional apps with accounts or ads — this is totally ephemeral
+
+📄 License
+
+This project is released under the MIT License — feel free to review, fork, or adapt it.
+Author & Contact
+
+Created by Antonios Rusman.
+No tracking, no analytics — just chat.
+  
