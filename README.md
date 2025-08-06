@@ -59,34 +59,34 @@ Unlike is built on a simple server–client model:
    git clone https://github.com/your‑org/unlike.git
 
 2. Install dependencies:
-  cd unlike
-  npm install
+   ```bash
+   cd unlike
+   npm install
 
 3. Launch server:
-
-  npm run start
+   ```bash
+   npm run start
 
 4
     Open browser to http://localhost:3000 (or your configured host) and chat away!
-```
 
 Deployment
 
-    Provide an SSL-secured WebSocket endpoint (e.g. wss://chat.unlike.gr)
+  Provide an SSL-secured WebSocket endpoint (e.g. wss://chat.unlike.gr)
 
-    Deploy the server on any VPS or cloud provider
+  Deploy the server on any VPS or cloud provider
 
-    Use a reverse proxy (Nginx/Traefik) to handle HTTPS/WSS
+  Use a reverse proxy (Nginx/Traefik) to handle HTTPS/WSS
 
-    Again: no database setup—just run and go!
+  Again: no database setup—just run and go!
 
 💡 Why “Unlike”?
 
-    The name reflects unlike conventional chat platforms
+  The name reflects unlike conventional chat platforms
 
-    Unlike stores no data and does not require identifying information
+  Unlike stores no data and does not require identifying information
 
-    Unlike traditional apps with accounts or ads — this is totally ephemeral
+  Unlike traditional apps with accounts or ads — this is totally ephemeral
 
 📄 License
 
