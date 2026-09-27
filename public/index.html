@@ -3,36 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Join Chat</title>
+  <title>Unlike — meet the community</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="../Imgs/Unlike-Logo-Dark.png">
+  <link rel="stylesheet" href="app.css">
+  <script src="theme.js"></script>
+  <link rel="icon" type="image/svg+xml" href="brand-icon.svg">
 </head>
 <body>
-  <div class="join-container">
-    <h1>Unlike</h1>
-    <form id="join-form">
-      <input type="text" id="username" placeholder="Enter a username" required />
-      <button type="submit">Join</button>
-    </form>
-    <div class="links-container">
-      <a href="PrivacyPolicy.html">Privacy Policy</a>
-      <a href="ToS.html">Terms of Service</a>
-    </div>
-    <div class="links-container">
-      <a href="contact.html">Report a problem</a>
-    </div>
-  </div>
-
-  <!-- Footer Section -->
-    <footer class="footer">
-        <div class="social-icons">
-            <img src="Imgs/instagram-icon.png" onclick=" window.open('https://www.instagram.com/_.rusman._?igsh=MTU0aWprbWd5anY0eA%3D%3D&utm_source=qr','_blank')" height="45px">
-            <img src="Imgs/github-icon.png" onclick=" window.open('https://github.com/AntonisRsmn','_blank')" height="29px" style="margin-bottom: 8px;">
-            <img src="Imgs/linked-in-icon.png" onclick=" window.open('https://gr.linkedin.com/in/antonis-rusman-a46424319','_blank')" height="42px" style="padding-bottom: 3.7px;">
+<main class="welcome-layout">
+  <header class="site-header index-site-header">
+    <a class="site-header-brand" href="index.html" aria-label="Unlike home">
+      <img class="brand-mark-image" src="brand-icon.svg" alt="">
+      <span>Unlike<span class="brand-period">.</span></span>
+    </a>
+    <button class="theme-toggle index-theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+      <span class="theme-toggle-icon" aria-hidden="true">☾</span><span class="theme-toggle-label">Dark</span>
+    </button>
+  </header>
+  <section class="welcome-copy">
+    <div class="welcome-message">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR PEOPLE ARE OUT THERE</p>
+        <h1>A little less scrolling.<br><span>More real talking.</span></h1>
+        <p class="welcome-description">Drop into the global lounge and meet people who are here for a good conversation. No profiles to perfect. Just say hello.</p>
+        <div class="community-note">
+          <span class="community-avatars" aria-hidden="true"><i>M</i><i>J</i><i>A</i></span>
+          <span><strong>A world of voices</strong><small>One friendly conversation at a time</small></span>
         </div>
-        <p>&copy; 2025 Antonis Rusman. All rights reserved.</p>
-    </footer>
+      </div>
+    </section>
+    <section class="join-card" aria-labelledby="join-title">
+      <p class="card-kicker">THE GLOBAL LOUNGE</p>
+      <h2 id="join-title">Come as you are.</h2>
+      <p class="card-description">Pick a name and join the conversation.</p>
+      <form id="join-form">
+        <label for="username">Your name in the room</label>
+        <input type="text" id="username" placeholder="e.g. sunnyday" maxlength="24" autocomplete="nickname" required />
+        <button type="submit"><span>Join the conversation</span><span aria-hidden="true">↗</span></button>
+      </form>
+      <p class="privacy-hint"><span aria-hidden="true">✦</span> No account needed. Be kind, stay curious.</p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-owner">
+      <a class="footer-brand" href="index.html"><img class="footer-brand-mark" src="brand-icon.svg" alt=""> <span>Unlike.</span></a>
+      <span class="footer-copyright">© 2026 <a class="portfolio-link" href="https://rusman.gr" target="_blank" rel="noopener noreferrer">Antonis Rusman</a></span>
     </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="PrivacyPolicy.html">Privacy</a>
+      <a href="ToS.html">Community guidelines</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <nav class="footer-socials" aria-label="Social profiles">
+      <a href="https://www.instagram.com/_.rusman._/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://github.com/AntonisRsmn" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://gr.linkedin.com/in/antonis-rusman-a46424319" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </nav>
+  </footer>
 
   <script>
     document.getElementById('join-form').addEventListener('submit', function(e) {

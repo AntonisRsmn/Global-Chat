@@ -5,17 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Global Chat</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="../Imgs/Unlike-Logo-Dark.png">
+  <link rel="stylesheet" href="app.css">
+  <script src="theme.js"></script>
+  <link rel="icon" type="image/svg+xml" href="brand-icon.svg">
 </head>
 <body>
+  <header class="site-header">
+    <a class="site-header-brand" href="index.html" aria-label="Unlike home">
+      <img class="brand-mark-image" src="brand-icon.svg" alt="">
+      <span>Unlike<span class="brand-period">.</span></span>
+    </a>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+      <span class="theme-toggle-icon" aria-hidden="true">☾</span><span class="theme-toggle-label">Dark</span>
+    </button>
+  </header>
   <div class="chat-container">
+    <div class="room-notice"><span class="online-dot"></span> The Global Lounge <span class="notice-divider">·</span> Messages are kept for 10 minutes</div>
     <div id="messages" class="messages-container">
       <!-- Messages will appear here -->
     </div>
     <form id="chat-form" class="chat-form">
-      <input id="message-input" type="text" autocomplete="off" placeholder="Type your message here..." />
-      <button type="submit">Send</button>
+      <label class="sr-only" for="message-input">Your message</label>
+      <input id="message-input" type="text" maxlength="200" autocomplete="off" placeholder="Say something kind..." />
+      <button type="submit" aria-label="Send message"><span>Send</span><span aria-hidden="true">↗</span></button>
     </form>
+    <div class="chat-hint">A little kindness goes a long way.</div>
   </div>
   <script src="/socket.io/socket.io.js"></script>
   <script src="script.js"></script>

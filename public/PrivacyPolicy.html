@@ -5,11 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="../Imgs/Unlike-Logo-Dark.png">
+  <link rel="stylesheet" href="app.css">
+  <script src="theme.js"></script>
+  <link rel="icon" type="image/svg+xml" href="brand-icon.svg">
 </head>
 <body>
+  <header class="site-header legal-header">
+    <a class="site-header-brand" href="index.html" aria-label="Unlike home">
+      <img class="brand-mark-image" src="brand-icon.svg" alt="">
+      <span>Unlike<span class="brand-period">.</span></span>
+    </a>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+      <span class="theme-toggle-icon" aria-hidden="true">☾</span><span class="theme-toggle-label">Dark</span>
+    </button>
+  </header>
+  <main class="legal-layout">
   <div class="content-container">
-    <h1>Privacy Policy</h1>
+    <h1 class="page-title">Privacy Policy</h1>
     <p class="effective-date"><strong>Effective Date:</strong> May 13, 2025</p>
 
     <h2>1. No Data Collection</h2>
@@ -30,14 +42,23 @@
     <h2>6. Contact</h2>
     <p>If you have any questions, you can contact us at: <strong>info@unlike.gr</strong> or by using our <strong><a href="contact.html">Contact Form</a></strong></p>
   </div>
+  </main>
 
- <footer class="footer">
-        <div class="social-icons">
-            <img src="Imgs/instagram-icon.png" onclick=" window.open('https://www.instagram.com/_.rusman._?igsh=MTU0aWprbWd5anY0eA%3D%3D&utm_source=qr','_blank')" height="45px">
-            <img src="Imgs/facebook-icon.png" onclick=" window.open('https://www.facebook.com/share/MizifUK8tP9L3nPT/?mibextid=LQQJ4d','_blank')" height="45px">
-            <img src="Imgs/linked-in-icon.png" onclick=" window.open('https://gr.linkedin.com/in/antonis-rusman-a46424319','_blank')" height="37px" style="padding-bottom: 3.7px;">
-        </div>
-        <p>&copy; 2025 Antonis Rusman. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="footer-owner">
+      <a class="footer-brand" href="index.html"><img class="footer-brand-mark" src="brand-icon.svg" alt=""> <span>Unlike.</span></a>
+      <span class="footer-copyright">© 2026 <a class="portfolio-link" href="https://rusman.gr" target="_blank" rel="noopener noreferrer">Antonis Rusman</a></span>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="PrivacyPolicy.html">Privacy</a>
+      <a href="ToS.html">Community guidelines</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <nav class="footer-socials" aria-label="Social profiles">
+      <a href="https://www.instagram.com/_.rusman._/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://github.com/AntonisRsmn" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://gr.linkedin.com/in/antonis-rusman-a46424319" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </nav>
   </footer>
 
 </body>
