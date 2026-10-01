@@ -2050,3 +2050,278 @@ a {
   background: transparent;
   box-shadow: none;
 }
+
+/* Keep phone layouts spacious and readable without changing the desktop composition. */
+@media (max-width: 760px) {
+  .site-header,
+  .index-site-header {
+    min-height: 48px;
+    padding-right: max(20px, env(safe-area-inset-right));
+    padding-left: max(20px, env(safe-area-inset-left));
+  }
+
+  .theme-toggle {
+    min-height: 44px;
+    padding: 0 14px;
+    font-size: 0.82rem;
+  }
+
+  .welcome-layout {
+    gap: 32px;
+    padding: 92px max(20px, env(safe-area-inset-right)) 36px max(20px, env(safe-area-inset-left));
+  }
+
+  .welcome-message h1 {
+    font-size: clamp(2.35rem, 11vw, 3.25rem);
+    line-height: 1.08;
+  }
+
+  .welcome-description {
+    margin: 20px 0 28px;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .community-note {
+    gap: 12px;
+  }
+
+  .join-card {
+    padding: 30px 24px 28px;
+  }
+
+  .join-card h2 {
+    font-size: 1.7rem;
+    line-height: 1.2;
+  }
+
+  .card-description {
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  #join-form label,
+  .privacy-hint {
+    font-size: 0.8rem;
+  }
+
+  #join-form input[type="text"],
+  #join-form button,
+  #message-input,
+  #chat-form button,
+  .form-contact input,
+  .form-contact textarea,
+  .form-contact button {
+    font-size: 1rem;
+  }
+
+  #join-form input[type="text"],
+  #join-form button,
+  .form-contact input,
+  .form-contact button {
+    min-height: 52px;
+  }
+
+  .legal-layout {
+    padding: 20px max(16px, env(safe-area-inset-right)) 32px max(16px, env(safe-area-inset-left));
+  }
+
+  .content-container {
+    margin: 16px auto 24px;
+    padding: 26px 22px;
+    border-radius: 18px;
+  }
+
+  .content-container .page-title {
+    margin-bottom: 16px;
+    font-size: clamp(2rem, 9vw, 2.5rem);
+  }
+
+  .content-container h2 {
+    margin-top: 30px;
+    font-size: 1.08rem;
+    line-height: 1.35;
+  }
+
+  .content-container p,
+  .content-container ul li {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .content-container ul {
+    padding-left: 1.25rem;
+  }
+
+  #contact {
+    padding: 28px max(16px, env(safe-area-inset-right)) 36px max(16px, env(safe-area-inset-left));
+  }
+
+  .form-contact {
+    padding: 26px 22px;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-contact textarea {
+    min-height: 140px;
+    line-height: 1.5;
+    resize: vertical;
+  }
+
+  .chat-container {
+    min-height: min(430px, calc(100svh - 178px));
+  }
+
+  .room-notice {
+    min-height: 46px;
+    padding: 9px max(16px, env(safe-area-inset-right)) 9px max(16px, env(safe-area-inset-left));
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .messages-container {
+    padding: 24px 18px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .message {
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .message-content {
+    max-width: calc(100% - 41px);
+  }
+
+  .message-text {
+    padding: 11px 14px;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .chat-form {
+    padding: 14px max(14px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left));
+  }
+
+  #message-input,
+  #chat-form button {
+    min-height: 50px;
+  }
+
+  #chat-form button {
+    min-width: 96px;
+  }
+
+  .chat-hint {
+    padding: 0 16px max(14px, env(safe-area-inset-bottom));
+    font-size: 0.74rem;
+  }
+
+  .site-footer {
+    margin-top: clamp(40px, 10vw, 64px);
+    gap: 14px;
+    padding: 22px max(20px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
+  }
+
+  .footer-brand {
+    font-size: 1rem;
+  }
+
+  .footer-owner .footer-copyright {
+    font-size: 0.72rem;
+  }
+
+  .footer-links {
+    flex-direction: row;
+    gap: 8px 18px;
+  }
+
+  .footer-socials {
+    gap: 8px 18px;
+  }
+
+  .footer-links a,
+  .footer-socials a,
+  .site-footer .footer-socials a {
+    padding: 6px 4px;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .welcome-layout {
+    gap: 26px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .join-card,
+  .form-contact {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .theme-toggle-label {
+    display: none;
+  }
+
+  .theme-toggle {
+    width: 44px;
+    padding: 0;
+  }
+
+  .room-notice .notice-divider {
+    display: none;
+  }
+
+  .footer-links,
+  .footer-socials {
+    gap: 6px 14px;
+  }
+}
+
+/* Stack the home page sections explicitly so their content cannot overlap. */
+@media (max-width: 760px) {
+  .welcome-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: clamp(40px, 10vw, 56px);
+    padding-top: 104px;
+    padding-bottom: 48px;
+  }
+
+  .welcome-copy {
+    display: block;
+    align-self: auto;
+  }
+
+  .welcome-message {
+    margin: 0;
+  }
+
+  .welcome-description {
+    margin: 24px 0 32px;
+  }
+
+  .community-note {
+    gap: 16px;
+  }
+
+  .join-card {
+    align-self: center;
+  }
+}
+
+@media (max-width: 390px) {
+  .welcome-layout {
+    gap: 36px;
+    padding-top: 96px;
+    padding-bottom: 40px;
+  }
+}
